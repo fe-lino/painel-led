@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,200;1,300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{ 	
+	padding: 0px 40px 0px 40px;
+}
+
+header{
+    background-color: #CB1E36;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 90px;
+    width: 100vw;
+}
+
+.logoTexto{
+    width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 20px;
+    font-weight: 200;
+}
+
+main{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.titulo{
+    color: #CB1E36;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: bold;
+}
+
+.tabela{
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border-radius: 25px;
+    height: 206px;
+    width: 1000px;
+    background-color: #CB1E36;
+}
+
+.labels{
+    color: white;
+    height: 30px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 20px;
+}
+
+.icones{
+    width: 70%;
+    display: flex;
+    flex-direction: row-reverse;
+}
