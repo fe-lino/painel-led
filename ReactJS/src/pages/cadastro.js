@@ -6,8 +6,6 @@ import '../../src/styles/cadastro.css'
 export default function Cadastro() {
 
     
-
-    
     return(
         <div className='main'>
             <div className="ladoB">
