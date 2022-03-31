@@ -11,9 +11,6 @@ import { Link } from "react-router-dom";
 
 export default function Listar() {
 
-    function Redirect() {
-        window.location = {cadastro} ;
-    }
     return(
         <body className='body'>
             <header className='container'>
@@ -38,8 +35,12 @@ export default function Listar() {
                         <p>Ações</p>
                     </div>
                     <div className='icones'>
+                        <button>
                         <img src={Edit}></img>
+                        </button>
+                        <button>
                         <img src={Exc}></img>
+                        </button>
                     </div>
                 </section>
 

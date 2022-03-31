@@ -27,7 +27,7 @@
 }
 
 .ladoV{
-    padding: 100px;
+    padding: 70px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +63,7 @@
 
 .formulario input{
     cursor: auto;
-    margin-bottom: 40px;
+    margin-bottom: 33px;
     padding: 15px;
     border: none;
     box-shadow: 0px 0px 15px rgba(63, 61, 86, 0.14);
@@ -95,6 +95,12 @@
 
     color: #77051e;
 
+}
+
+.selectTU{
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
 }
 
 @media (max-width:991px){
