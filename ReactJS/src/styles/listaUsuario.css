@@ -75,10 +75,19 @@ main{
 .icones{
     width: 70%;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icones button{
     background: transparent;
     border: none;
+    cursor: pointer;
+}
+
+.funcoes{
+    width: 70px;
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -13,6 +13,7 @@ export default class Cadastro extends Component {
             nome : '',
             email : '',
             senha : '',
+            tipoUsuario : '',
         }
     }
 
@@ -20,10 +21,8 @@ export default class Cadastro extends Component {
         console.log(this.state.listaUsuario)
     }
  
-
     render(){
 
-    
         return(
             <div className='main'>
                 <div className="ladoB">

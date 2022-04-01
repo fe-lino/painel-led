@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Cadastro from './pages/cadastro'
-import Listausuario from './pages/listausuario.js'
+import Cadastro from './pages/cadastro.jsx'
+import Listar from './pages/listausuario.jsx'
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter , Routes } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const routing = (
     <div>
       <Routes>
         {/* <Route exact path ="/" component={Listausuario}/>  */}
-        <Route index element={<Listausuario />} />       
+        <Route index element={<Listar />} />       
         {/* <Route exact path="/cadastro" component={Cadastro} /> */}
         <Route path="/cadastro" element={<Cadastro />}></Route>
       </Routes>
