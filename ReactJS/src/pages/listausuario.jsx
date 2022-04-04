@@ -21,8 +21,11 @@ export default class Cadastro extends Component {
     }
 
     buscarUsuarios = () => {
-        fetch('')
+        fetch('http://localhost:5000/api/Usuarios')
+        
+        .then()
     }
+
 
     componentDidMount(){
         this.buscarUsuarios()

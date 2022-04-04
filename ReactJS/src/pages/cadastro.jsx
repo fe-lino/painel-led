@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import logo from '../../src/assets/img/logoCadastro.png'
 import logoSenai from '../../src/assets/img/logoSenai.svg'
 import '../../src/styles/cadastro.css'
+import api from "./services/api";
 import { Link } from "react-router-dom";
 
 export default class Cadastro extends Component {

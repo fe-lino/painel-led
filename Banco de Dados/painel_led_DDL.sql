@@ -27,3 +27,5 @@ dataFim datetime,
 arquivo varchar(500)
 );
 GO
+
+select * from Usuario;
