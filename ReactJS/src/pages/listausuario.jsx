@@ -10,32 +10,34 @@ import { Link } from "react-router-dom";
 
 export default class Cadastro extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            listaUsuario : [ {idUsuario : 1, nome : 'Juscelino', email :'teste@teste.com', senha :'12345678'} ],
-            nome : '',
-            email : '',
-            senha : '',
+            listaUsuario: [],
+            nome: '',
+            email: '',
+            tipoUsuario: '',
         }
     }
 
     buscarUsuarios = () => {
         fetch('http://localhost:5000/api/Usuarios')
-        
-        .then()
+
+            .then(resposta => resposta.json())
+
+            .then(dados => this.setState({ listaUsuario: dados }))
     }
 
 
-    componentDidMount(){
+    componentDidMount() {
         this.buscarUsuarios()
     }
- 
 
-    render(){
 
-   
-        return(
+    render() {
+
+
+        return (
             <body className='body'>
                 <header className='container'>
                     <div className='logoTexto'>
@@ -44,48 +46,54 @@ export default class Cadastro extends Component {
                     </div>
                     <img src={user}></img>
                 </header>
-    
+
                 <main>
                     <div className='titulo'>
                         <h2>Usuários</h2>
                     </div>
-                    
-                    <section className='tabela'>
-                        <table className='labels'>
-                            <tr>Id</tr>
-                            <tr>Usuário</tr>
-                            <tr>Email</tr>
-                            <tr>Tipo de Usuário</tr>
-                            <tr>Ações</tr>
-                        </table>
-                        <table className='icones'>
-                            <tr>{this.state.nome}</tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                            
-                            <div className='funcoes'>
-                            <button type='button'>
-                            <img src={Edit}></img>
-                            </button>
-                            <button type='button'>
-                            <img src={Exc}></img>
-                            </button>
-                            </div>
-                        </table>
-                    </section>
-    
+
+                    <table className='tabela'>
+                        <thead className='labels'>
+                            <tr >
+                                <th>Id</th>
+                                <th>Usuário</th>
+                                <th>Email</th>
+                                <th>Tipo de Usuário</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody className='icones'>
+                            {this.state.listaUsuario.map((usuario) => {
+                                return (
+                                    <tr key={usuario.idUsuario}>
+                                        <td>{usuario.idUsuario}</td>
+                                        <td>{usuario.nomeUsuario}</td>
+                                        <td>{usuario.email}</td>
+                                        <td>{usuario.idTipoUsuario}</td>
+                                        <div className='funcoes'>
+                                            <button type='button'>
+                                                <img src={Edit}></img>
+                                            </button>
+                                            <button type='button'>
+                                                <img src={Exc}></img>
+                                            </button>
+                                        </div>
+                                    </tr>
+                                )
+                            })}
+                        </tbody>
+                    </table>
                     {/* <div>
                         <img id='button' src={Add} onClick={Redirect} ></img>
                     </div> */}
-    
+
                     <Link to='/cadastro'>
-                        <img id='button' src={Add}/>
+                        <img id='button' src={Add} />
                     </Link>
-    
-                    
+
+
                 </main>
             </body>
         );
-     }
+    }
 };

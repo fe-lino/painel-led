@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.Extensions.Configuration;
 using painel_tcc_senaiSCS.Domains;
 
 #nullable disable
@@ -26,8 +27,12 @@ namespace painel_tcc_senaiSCS.Contexts
         {
             if (!optionsBuilder.IsConfigured)
             {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();   
                 // Pc do Senai
-                optionsBuilder.UseSqlServer("name=PainelSenai~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("PainelSenai"));
             }
         }
 

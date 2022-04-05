@@ -51,7 +51,7 @@ namespace painel_tcc_senaiSCS
                 options.AddPolicy("CorPolicy",
                     builder =>
                     {
-                        builder.AllowAnyOrigin()
+                        builder.WithOrigins("http://localhost:5000")
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                     });
