@@ -81,6 +81,7 @@ export default class Cadastro extends Component {
                                     </tr>
                                 )
                             })}
+                            
                         </tbody>
                     </table>
                     {/* <div>

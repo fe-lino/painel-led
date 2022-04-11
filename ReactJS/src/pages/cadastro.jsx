@@ -4,22 +4,50 @@ import logoSenai from '../../src/assets/img/logoSenai.svg'
 import '../../src/styles/cadastro.css'
 import api from "../services/api";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 export default class Cadastro extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            listaUsuario : [ {idUsuario : 1, nome : 'Juscelino', email :'teste@teste.com', senha :'12345678'} ],
+            listaUsuario : [  ],
             nome : '',
             email : '',
             senha : '',
             tipoUsuario : '',
+            
         }
+    }
+
+    cadastrarUsuarios = (event) =>{
+      
+        event.preventDefault();
+        this.setState({isLoading: true});
+
+        let cadastro = {
+            nomeUsuario: this.state.nome,
+            email: this.state.email,
+            senha: this.state.senha,
+            tipoUsuario: this.state.tipoUsuario,
+
+        };
+
+        axios.post('http://localhost:5000/api/Usuarios')
+        
+        .then(resposta => {
+            if (resposta.status === 201) {
+                console.log('Evento cadastrado');
+            }
+        })
+
+        
     }
 
     componentDidMount(){
         console.log(this.state.listaUsuario)
+        this.cadastrarUsuarios();
     }
  
     render(){
@@ -40,7 +68,7 @@ export default class Cadastro extends Component {
                             type='text' 
                             name='nomeUsuario'
                             required
-                        
+                            onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Email</label>
@@ -48,7 +76,7 @@ export default class Cadastro extends Component {
                             type='email' 
                             nome='email'
                             required
-            
+                            onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Senha</label>
@@ -56,16 +84,17 @@ export default class Cadastro extends Component {
                             type='password'
                             name='senha'
                             required
-            
+                            onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Tipo Usuário</label>
-                            <select className='selectTU' required>
+                            <select className='selectTU' required onChange={this.atualizaStateCampo}>
 
                                 <option></option>
-                                <option>Administrador</option>
-                                <option>Comum</option>
-
+                                <option value='1'>Administrador</option>
+                                <option value='2' >Comum</option> 
+                                <option value='3' >TV</option> 
+                                
                             </select>
 
                             <div className='divBotao'>

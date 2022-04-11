@@ -48,10 +48,10 @@ namespace painel_tcc_senaiSCS
 
             services.AddCors(options =>
             {
-                options.AddPolicy("CorPolicy",
+                options.AddPolicy("CorsPolicy",
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:5000")
+                        builder.AllowAnyOrigin()
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                     });
@@ -114,7 +114,7 @@ namespace painel_tcc_senaiSCS
 
             app.UseRouting();
 
-            app.UseCors("CorPolicy");
+            app.UseCors("CorsPolicy");
 
             app.UseStaticFiles(); // For the wwwroot folder
 
