@@ -9,104 +9,127 @@ import axios from "axios";
 
 export default class Cadastro extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            listaUsuario : [  ],
-            nome : '',
-            email : '',
-            senha : '',
-            tipoUsuario : '',
-            
+            listaUsuario: [],
+            nome: "",
+            email: "",
+            senha: "",
+            idTipoUsuario: 0,
+
         }
     }
 
-    cadastrarUsuarios = (event) =>{
-      
+    cadastrarUsuarios = (event) => {
+
+        this.setState({ isLoading: true });
         event.preventDefault();
-        this.setState({isLoading: true});
 
         let cadastro = {
-            nomeUsuario: this.state.nome,
+            nomeUsuario: this.state.nomeUsuario,
             email: this.state.email,
             senha: this.state.senha,
-            tipoUsuario: this.state.tipoUsuario,
+            idTipoUsuario: this.state.idTipoUsuario,
 
         };
 
-        axios.post('http://localhost:5000/api/Usuarios')
-        
-        .then(resposta => {
-            if (resposta.status === 201) {
-                console.log('Evento cadastrado');
-            }
-        })
+        axios.post('http://localhost:5000/api/Usuarios', cadastro,
+            {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('')
+                }
+            })
 
-        
+            .then(resposta => {
+                if (resposta.status === 201) {
+                    console.log('Evento cadastrado');
+                }
+            })
+
+            .catch(erro => {
+                console.log(erro);
+                this.setState({ isLoading: false })
+            })
+
     }
 
-    componentDidMount(){
-        console.log(this.state.listaUsuario)
-        this.cadastrarUsuarios();
-    }
- 
-    render(){
+    atualizaStateCampo = (campo) => {
+        this.setState({ [campo.target.name]: campo.target.value })
+    };
 
-        return(
+
+    // componentDidMount(){
+    //     console.log(this.state.listaUsuario)
+    // }
+
+    render() {
+
+        return (
             <div className='main'>
                 <div className="ladoB">
                     <img className='logo' src={logo} alt='Logo Senai'></img>
                 </div>
 
                 <div className="ladoV">
-                        <img className='logoSenai' src={logoSenai}></img>
+                    <img className='logoSenai' src={logoSenai}></img>
                     <div className='divForm'>
 
-                        <form method="get" action='/' className='formulario'>
+                        <form onSubmit={this.cadastrarUsuarios} className='formulario'>
                             <label>Nome</label>
-                            <input 
-                            type='text' 
-                            name='nomeUsuario'
-                            required
-                            onChange={this.atualizaStateCampo}
+                            <input
+                                type='text'
+                                name='nomeUsuario'
+                                value={this.state.nomeUsuario}
+                                required
+                                onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Email</label>
-                            <input 
-                            type='email' 
-                            nome='email'
-                            required
-                            onChange={this.atualizaStateCampo}
+                            <input
+                                type='email'
+                                name='email'
+                                value={this.state.email}
+                                required
+                                onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Senha</label>
                             <input
-                            type='password'
-                            name='senha'
-                            required
-                            onChange={this.atualizaStateCampo}
+                                type='password'
+                                name='senha'
+                                value={this.state.senha}
+                                required
+                                onChange={this.atualizaStateCampo}
                             ></input>
 
                             <label>Tipo Usuário</label>
-                            <select className='selectTU' required onChange={this.atualizaStateCampo}>
+                            <select
+                                className='selectTU'
+                                required
+                                value={this.state.idTipoUsuario}
+                                onChange={this.atualizaStateCampo}
+                            >
 
-                                <option></option>
-                                <option value='1'>Administrador</option>
-                                <option value='2' >Comum</option> 
-                                <option value='3' >TV</option> 
-                                
+                                <option name='0' value='0'></option>
+                                <option name='1' value='1'>Administrador</option>
+                                <option name='2'  value='2' >Comum</option>
+                                <option name='3'  value='3' >TV</option>
+
                             </select>
 
                             <div className='divBotao'>
 
-                 
-                                <button type='submit' to='/'>
+
+                                <button type='submit'
+                                    to='/'
+                                    onClick={this.cadastrarUsuarios}>
                                     Cadastrar
                                 </button>
 
 
                             </div>
-                            
+
                         </form>
 
                     </div>

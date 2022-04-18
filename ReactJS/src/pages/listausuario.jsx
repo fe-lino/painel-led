@@ -28,6 +28,19 @@ export default class Cadastro extends Component {
             .then(dados => this.setState({ listaUsuario: dados }))
     }
 
+    excluirUsuarios = (usuario) => {
+        console.log('O usuario' + usuario.idUsuario + 'foi excluido')
+        fetch('http://localhost:5000/api/Usuarios/' + usuario.idUsuario, 
+        {
+            method: 'DELETE'
+        })
+    
+    }
+    atualizaEstadoTitulo = async (event) => {
+        await this.setState({ nome: event.target.value })
+        console.log(this.state.nome)
+    };
+
 
     componentDidMount() {
         this.buscarUsuarios()
@@ -39,7 +52,7 @@ export default class Cadastro extends Component {
 
         return (
             <body className='body'>
-                <header className='container'>
+                <header className=' header container'>
                     <div className='logoTexto'>
                         <h1>Configurando Painel</h1>
                         <img src={logo}></img>
@@ -74,7 +87,9 @@ export default class Cadastro extends Component {
                                             <button type='button'>
                                                 <img src={Edit}></img>
                                             </button>
-                                            <button type='button'>
+                                            <button type='button'
+                                                onClick={() => this.excluirUsuarios(usuario)}
+                                            >
                                                 <img src={Exc}></img>
                                             </button>
                                         </div>
