@@ -13,7 +13,7 @@ const routing = (
     <div>
       <Routes>
         {/* <Route exact path ="/" component={Listausuario}/>  */}
-        <Route index element={<Listar />} />       
+        <Route index element={<Listar />} />
         {/* <Route exact path="/cadastro" component={Cadastro} /> */}
         <Route path="/cadastro" element={<Cadastro />}></Route>
       </Routes>

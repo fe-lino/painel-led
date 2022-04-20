@@ -34,7 +34,7 @@ export default class Cadastro extends Component {
         {
             method: 'DELETE'
         })
-    
+        window.location.reload(true);
     }
     atualizaEstadoTitulo = async (event) => {
         await this.setState({ nome: event.target.value })
@@ -84,9 +84,9 @@ export default class Cadastro extends Component {
                                         <td>{usuario.email}</td>
                                         <td>{usuario.idTipoUsuario}</td>
                                         <div className='funcoes'>
-                                            <button type='button'>
+                                            {/* <button type='button'>
                                                 <img src={Edit}></img>
-                                            </button>
+                                            </button> */}
                                             <button type='button'
                                                 onClick={() => this.excluirUsuarios(usuario)}
                                             >

@@ -43,7 +43,7 @@ export default class Cadastro extends Component {
 
             .then(resposta => {
                 if (resposta.status === 201) {
-                    console.log('Evento cadastrado');
+                    console.log('Usuário cadastrado');
                 }
             })
 
@@ -104,26 +104,30 @@ export default class Cadastro extends Component {
                             ></input>
 
                             <label>Tipo Usuário</label>
+                          
                             <select
                                 className='selectTU'
                                 required
+                                name='idTipoUsuario'
                                 value={this.state.idTipoUsuario}
                                 onChange={this.atualizaStateCampo}
                             >
 
-                                <option name='0' value='0'></option>
-                                <option name='1' value='1'>Administrador</option>
-                                <option name='2'  value='2' >Comum</option>
-                                <option name='3'  value='3' >TV</option>
-
+                                <option value='0'></option>
+                                <option value='1'>Administrador</option>
+                                <option value='2' >Comum</option>
+                                <option value='3' >TV</option>
                             </select>
 
                             <div className='divBotao'>
 
-
+                    
                                 <button type='submit'
                                     to='/'
-                                    onClick={this.cadastrarUsuarios}>
+                                    onClick={this.cadastrarUsuarios}
+                                    >
+                                        <Link>
+                                        </Link>
                                     Cadastrar
                                 </button>
 

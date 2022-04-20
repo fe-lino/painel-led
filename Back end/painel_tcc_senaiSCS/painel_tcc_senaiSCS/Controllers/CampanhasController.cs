@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 
 namespace painel_tcc_senaiSCS.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class CampanhasController : ControllerBase
@@ -75,7 +76,7 @@ namespace painel_tcc_senaiSCS.Controllers
         /// <param name="CampanhaAtualizada">Objeto com as novas informações da Campanha e o id da Campanha a ser atualizada</param>
         /// <returns>Um status code 204 - No content</returns>
         //[Authorize(Roles = "2")]
-        [HttpPut("{idClinica}")]
+        [HttpPut("{idCadastrarCampanha}")]
         public IActionResult Atualizar(int idCadastrarCampanha, CadastrarCampanha CampanhaAtualizada)
         {
             try
