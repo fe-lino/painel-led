@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from '../../src/assets/img/Logo.svg'
 import user from '../../src/assets/img/User.svg'
+import user2 from '../../src/assets/img/User2.svg'
 import Edit from '../../src/assets/img/editar.svg'
 import Exc from '../../src/assets/img/excluir.svg'
 import Add from '../../src/assets/img/Add.svg'
@@ -57,14 +58,17 @@ export default class Cadastro extends Component {
                         <h1>Configurando Painel</h1>
                         <img src={logo}></img>
                     </div>
-                    <img src={user}></img>
+                    <img className='user' src={user}></img>
+                    <img className='user2' src={user2}></img>
                 </header>
 
                 <main>
                     <div className='titulo'>
                         <h2>Usuários</h2>
                     </div>
-
+                    <div className="listaResponsiva">
+                        
+                    </div>
                     <table className='tabela'>
                         <thead className='labels'>
                             <tr >

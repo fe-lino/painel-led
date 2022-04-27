@@ -126,8 +126,6 @@ export default class Cadastro extends Component {
                                     to='/'
                                     onClick={this.cadastrarUsuarios}
                                     >
-                                        <Link>
-                                        </Link>
                                     Cadastrar
                                 </button>
 

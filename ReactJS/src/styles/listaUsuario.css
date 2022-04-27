@@ -10,6 +10,11 @@
 	padding: 0px 40px 0px 40px;
 }
 
+.user2{
+    width: 0px;
+    display: none;
+}
+
 .header{
     background-color: #CB1E36;
     display: flex;
@@ -17,8 +22,10 @@
     flex-direction: row;
     align-items: center;
     height: 90px;
-    width: 100vw;
+    width: auto;
 }
+
+
 
 .logoTexto{
     width: 510px;
@@ -49,7 +56,9 @@ main{
     font-family: 'Montserrat', sans-serif; 
     font-weight: bold;
 }
-
+.listaResponsiva{
+    display: none;
+}
 .tabela{
     padding: 20px;
     display: flex;
@@ -59,6 +68,7 @@ main{
     border-radius: 25px;
     height: auto;
     width: 1000px;
+    color: white;
     background-color: #CB1E36;
 }
 
@@ -102,4 +112,45 @@ main{
     width: 70px;
     display: flex;
     justify-content: space-evenly;
+}
+
+@media (max-width:450px){
+
+    body{
+        background-color: #CB1E36;
+    }
+    
+    .header{
+        height: auto;
+    }
+    .container{
+        padding: 0px;
+    }
+
+    h1{
+        display: none;
+    }
+
+    header img{
+        width: 0px;
+    }
+
+    .user{
+       display: none;
+    }
+
+    .user2{
+        width: 100px;
+        display: block;
+    }
+    main{
+        height: 70vh;
+    }
+
+    .tabela{
+       display: none;
+    }
+    #button{
+        display: none;
+    }
 }
