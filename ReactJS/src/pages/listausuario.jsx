@@ -67,7 +67,7 @@ export default class Cadastro extends Component {
                         <h2>Usuários</h2>
                     </div>
                     <div className="listaResponsiva">
-                        
+                        <p>João</p>
                     </div>
                     <table className='tabela'>
                         <thead className='labels'>

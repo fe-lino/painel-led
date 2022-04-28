@@ -127,14 +127,14 @@ main{
         padding: 0px;
     }
 
-    h1{
+    h1, h2 {
         display: none;
     }
 
     header img{
         width: 0px;
     }
-
+    
     .user{
        display: none;
     }
@@ -144,12 +144,24 @@ main{
         display: block;
     }
     main{
-        height: 70vh;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .tabela{
        display: none;
     }
+
+    .listaResponsiva{
+        border-radius: 20px;
+        display: block;
+        background-color: white;
+        height: 650px;
+        width: 360px;
+    }
+
     #button{
         display: none;
     }
