@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Cadastro from './pages/cadastro.jsx'
 import Listar from './pages/listausuario.jsx'
+import Camapanha from './pages/listaCampanha.jsx'
 import reportWebVitals from './reportWebVitals';
 import { Route, BrowserRouter , Routes } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const routing = (
         <Route index element={<Listar />} />
         {/* <Route exact path="/cadastro" component={Cadastro} /> */}
         <Route path="/cadastro" element={<Cadastro />}></Route>
+        <Route path="/campanha" element={<Camapanha />}></Route>
       </Routes>
     </div>
   </BrowserRouter>

@@ -42,8 +42,9 @@ export default class Cadastro extends Component {
             })
 
             .then(resposta => {
-                if (resposta.status === 201) {
+                if (resposta.status === 200) {
                     console.log('Usuário cadastrado');
+                    window.location.replace("http://localhost:3000")
                 }
             })
 
@@ -123,7 +124,6 @@ export default class Cadastro extends Component {
 
                     
                                 <button type='submit'
-                                    to='/'
                                     onClick={this.cadastrarUsuarios}
                                     >
                                     Cadastrar

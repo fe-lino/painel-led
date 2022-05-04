@@ -9,7 +9,7 @@ import '../../src/styles/listaUsuario.css'
 import { Link } from "react-router-dom";
 
 
-export default class Cadastro extends Component {
+export default class Listar extends Component {
 
     constructor(props) {
         super(props);
