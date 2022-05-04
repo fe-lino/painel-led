@@ -9,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using painel_tcc_senaiSCS.Contexts;
+using painel_tcc_senaiSCS.Context;
 using painel_tcc_senaiSCS.Interfaces;
 using painel_tcc_senaiSCS.Repositories;
 using System;
@@ -48,7 +48,7 @@ namespace painel_tcc_senaiSCS
 
             services.AddCors(options =>
             {
-                options.AddPolicy("CorsPolicy",
+                options.AddPolicy("CorPolicy",
                     builder =>
                     {
                         builder.AllowAnyOrigin()
@@ -62,6 +62,12 @@ namespace painel_tcc_senaiSCS
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Painel.webAPI", Version = "v1" });
+
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
             services
@@ -114,7 +120,7 @@ namespace painel_tcc_senaiSCS
 
             app.UseRouting();
 
-            app.UseCors("CorsPolicy");
+            app.UseCors("CorPolicy");
 
             app.UseStaticFiles(); // For the wwwroot folder
 

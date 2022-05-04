@@ -218,9 +218,8 @@ C:\Users\45626492836.INFOSCS\Desktop\testte\tcc_senaiSCS\Back end\painel_tcc_sen
 C:\Users\45626492836.INFOSCS\Desktop\testte\tcc_senaiSCS\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\ref\painel_tcc_senaiSCS.dll
 C:\Users\45626492836.INFOSCS\Desktop\testte\tcc_senaiSCS\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.pdb
 C:\Users\45626492836.INFOSCS\Desktop\testte\tcc_senaiSCS\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.genruntimeconfig.cache
-C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.dll
-C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\ref\painel_tcc_senaiSCS.dll
-C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.pdb
+C:\Users\45626492836.INFOSCS\Desktop\tcc_senaiSCS\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\painel_tcc_senaiSCS.xml
+C:\Users\45626492836.INFOSCS\Desktop\tcc_senaiSCS\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.xml
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\appsettings.json
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\painel_tcc_senaiSCS.exe
@@ -230,6 +229,7 @@ C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tc
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\painel_tcc_senaiSCS.dll
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\ref\painel_tcc_senaiSCS.dll
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\painel_tcc_senaiSCS.pdb
+C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\painel_tcc_senaiSCS.xml
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\BCrypt.Net-Next.dll
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\Humanizer.dll
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -291,4 +291,8 @@ C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tc
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\scopedcss\bundle\painel_tcc_senaiSCS.styles.css
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.RazorTargetAssemblyInfo.cache
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.csproj.CopyComplete
+C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.dll
+C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\ref\painel_tcc_senaiSCS.dll
+C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.xml
+C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.pdb
 C:\Users\43026998842.INFOSCS\Desktop\painiel certo\painel-led\Back end\painel_tcc_senaiSCS\painel_tcc_senaiSCS\obj\Debug\net5.0\painel_tcc_senaiSCS.genruntimeconfig.cache

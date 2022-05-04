@@ -13,6 +13,8 @@ namespace painel_tcc_senaiSCS.Domains
         public DateTime? DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
         public string Arquivo { get; set; }
+        public string Descricao { get; set; }
+        public bool? CampanhaAtiva { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; }
     }

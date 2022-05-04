@@ -1,7 +1,7 @@
 ﻿using Campanha.Utils;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using painel_tcc_senaiSCS.Contexts;
 using painel_tcc_senaiSCS.Domains;
 using painel_tcc_senaiSCS.Interfaces;
 using painel_tcc_senaiSCS.Repositories;
@@ -13,25 +13,21 @@ using System.Threading.Tasks;
 
 namespace painel_tcc_senaiSCS.Controllers
 {
-    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class CampanhasController : ControllerBase
     {
         private readonly ICampanhasRepository _campanhasRepository;
 
-        /// <summary>
-        /// Instancia o objeto para que haja referência às implementações no repositório
-        /// </summary>
+      
         public CampanhasController(ICampanhasRepository context)
         {
             _campanhasRepository = context;
         }
         /// <summary>
-        /// Lista todos as Campanhas existentes
+        /// Lista todas as campanhas
         /// </summary>
-        /// <returns>Uma lista de campanha</returns>
-        //[Authorize(Roles = "2")]
+        /// <returns></returns>
         [HttpGet("ListarTodos")]
         public IActionResult ListarTodos()
         {
@@ -41,8 +37,8 @@ namespace painel_tcc_senaiSCS.Controllers
         /// <summary>
         /// Busca uma campanha pelo id
         /// </summary>
-        /// <param name="idCadastrarCampanha">id da campanha a ser buscado</param>
-        /// <returns>Uma campanha encontrado com status code - 200</returns>
+        /// <param name="idCadastrarCampanha"></param>
+        /// <returns></returns>
         [HttpGet("{idCadastrarCampanha}")]
         public IActionResult BuscarPorId(int idCadastrarCampanha)
         {
@@ -55,27 +51,12 @@ namespace painel_tcc_senaiSCS.Controllers
             return Ok(CadastrarCampanhaBuscada);
         }
 
-
-
         /// <summary>
-        /// Cadastra uma Campanha
+        /// Atualiza uma campanha existente
         /// </summary>
-        /// <param name="CadastrarNovaCampanha">Campanha a ser cadastrado</param>
-        /// <returns>Um status code 201 - Created</returns>
-        //[HttpPost]
-        //public IActionResult Cadastrar(CadastrarCampanha CadastrarNovaCampanha)
-        //{
-        //    _campanhasRepository.Cadastrar(CadastrarNovaCampanha);
-
-        //    return StatusCode(201);
-        //}
-
-        /// <summary>
-        /// Atualiza uma Campanha existente
-        /// </summary>
-        /// <param name="CampanhaAtualizada">Objeto com as novas informações da Campanha e o id da Campanha a ser atualizada</param>
-        /// <returns>Um status code 204 - No content</returns>
-        //[Authorize(Roles = "2")]
+        /// <param name="idCadastrarCampanha"></param>
+        /// <param name="CampanhaAtualizada"></param>
+        /// <returns></returns>
         [HttpPut("{idCadastrarCampanha}")]
         public IActionResult Atualizar(int idCadastrarCampanha, CadastrarCampanha CampanhaAtualizada)
         {
@@ -93,24 +74,38 @@ namespace painel_tcc_senaiSCS.Controllers
         }
 
         /// <summary>
-        /// Deleta uma Campanha
+        /// Deleta uma campanha existente
         /// </summary>
-        /// <param name="idCadastrarCampanha">id da Campanha a ser deletada/param>
-        /// <returns>Um status code 204 - No content</returns>
+        /// <param name="idCadastrarCampanha"></param>
+        /// <returns></returns>
         [HttpDelete("{idCadastrarCampanha}")]
         public IActionResult Deletar(int idCadastrarCampanha)
         {
-            _campanhasRepository.Deletar(idCadastrarCampanha);
+            try
+            {
+                // Faz a chamada para o método
+                _campanhasRepository.Deletar(idCadastrarCampanha);
 
-            return StatusCode(204);
+                // Retorna um status code
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
         }
-
+        /// <summary>
+        /// Cadastra a campanha junto com a imagem
+        /// </summary>
+        /// <param name="campanha"></param>
+        /// <param name="arquivo"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Cadastrar([FromForm] CadastrarCampanha campanha, IFormFile arquivo)
         {
 
             #region Upload da Imagem com extensões permitidas apenas
-            string[] extensoesPermitidas = { "jpg", "png", "jpeg", "gif" };
+            string[] extensoesPermitidas = { "jpg", "png", "jpeg", "gif", "mp4" };
             string uploadResultado = Upload.UploadFile(arquivo, extensoesPermitidas);
 
             if (uploadResultado == "")

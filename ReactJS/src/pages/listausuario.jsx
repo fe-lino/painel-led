@@ -22,7 +22,7 @@ export default class Cadastro extends Component {
     }
 
     buscarUsuarios = () => {
-        fetch('http://localhost:5000/api/Usuarios')
+        fetch('http://localhost:5000/api/Usuarios/Listar')
 
             .then(resposta => resposta.json())
 
@@ -31,10 +31,10 @@ export default class Cadastro extends Component {
 
     excluirUsuarios = (usuario) => {
         console.log('O usuario' + usuario.idUsuario + 'foi excluido')
-        fetch('http://localhost:5000/api/Usuarios/' + usuario.idUsuario, 
-        {
-            method: 'DELETE'
-        })
+        fetch('http://localhost:5000/api/Usuarios/' + usuario.idUsuario,
+            {
+                method: 'DELETE'
+            })
         window.location.reload(true);
     }
     atualizaEstadoTitulo = async (event) => {
@@ -67,7 +67,19 @@ export default class Cadastro extends Component {
                         <h2>Usuários</h2>
                     </div>
                     <div className="listaResponsiva">
-                        <p>João</p>
+                        <div className="accordion">
+                            <div className="label">João</div>
+                            <div className="content">
+
+                            <p> Lorem ipsum dolor sit amet 
+                                consectetur adipisicing elit.
+                                 Deserunt dicta rerum optio laboriosam 
+                                 officia pariatur sapiente animi. 
+                                 Consequatur explicabo pariatur culpa,
+                                  harum ducimus consequuntur et. 
+                                  Recusandae tempore enim maxime! A.</p>
+                            </div>
+                        </div>
                     </div>
                     <table className='tabela'>
                         <thead className='labels'>
@@ -100,7 +112,7 @@ export default class Cadastro extends Component {
                                     </tr>
                                 )
                             })}
-                            
+
                         </tbody>
                     </table>
                     {/* <div>

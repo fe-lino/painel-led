@@ -162,6 +162,14 @@ main{
         width: 360px;
     }
 
+    .accordion{
+        position: relative;
+    }
+
+    .accordion .label{
+        
+    }
+
     #button{
         display: none;
     }
