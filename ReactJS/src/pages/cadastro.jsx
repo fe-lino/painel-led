@@ -45,6 +45,7 @@ export default class Cadastro extends Component {
                 if (resposta.status === 200) {
                     console.log('Usuário cadastrado');
                     window.location.replace("http://localhost:3000")
+                    // window.location.reload(true);
                 }
             })
 

@@ -86,7 +86,7 @@ export default class Listar extends Component {
                             <tr >
                                 <th>Id</th>
                                 <th>Usuário</th>
-                                <th>Email</th>
+                                <th>Email Usuario</th>
                                 <th>Tipo de Usuário</th>
                                 <th>Ações</th>
                             </tr>

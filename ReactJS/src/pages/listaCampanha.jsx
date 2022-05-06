@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import '../../src/styles/listaCampanha.css'
+import '../../src/styles/listaCampanha.css';
+import Curso from '../../src/assets/img/reparoComputadores.png'
 
 export default class Campanha extends Component {
 
@@ -18,29 +19,50 @@ export default class Campanha extends Component {
     };
 
 
-    buscarCampanhas = () => {
-        fetch('http://localhost:5000/api/Campanhas/ListarTodos')
+    buscarCampanhasAtivas = () => {
+        fetch('http://localhost:5000/api/Campanhas/AtivoList')
 
             .then(resposta => resposta.json())
 
             .then(dados => this.setState({ listaCampanha: dados }))
     };
 
+    componentDidMount() {
+        this.buscarCampanhasAtivas()
+    }
+
     render() {
         return (
             <body>
                 <main>
                     <section className="imgCampanha">
-                        <img></img>
+                    {this.state.listaCampanha.map((camapanha) => {
+                            return (
+                                <img className="imgCurso" src={camapanha.arquivo}></img>
+                            )
+                        })}
                     </section>
 
-                    <section>
-                        <h2>TESTE NOME</h2>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Sit voluptate nostrum,
-                            totam vitae quod dolore vero incidunt, ducimus,
-                            recusandae ex sint tenetur reprehenderit dignissimos cumque quae eveniet
-                            expedita voluptas! Aperiam!</p>
+                    <section className="infoCampanha">
+
+                        {this.state.listaCampanha.map((camapanha) => {
+                            return (
+                                <div className="divCamp">
+                                    <h2>{camapanha.nomeCampanha}</h2>
+                                    <p>{camapanha.descricao}</p>
+                                </div>
+                            )
+                        })}
+
+
+                        {/* {this.state.listaCampanha.map((camapnha) => {
+                            return(
+
+                                    <h2>{camapnha.nomeCampanha}</h2>
+                                
+                            )
+                        })} */}
+
                     </section>
 
                 </main>
