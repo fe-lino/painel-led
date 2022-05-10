@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-main{
+.mainCampanha{
     height: 100vh;
     display: flex;
     justify-self: unset;
@@ -20,7 +20,7 @@ main{
 }
 
 .imgCurso{
-    width: 50%;
+    width: 100%;
     height: 100%;
 }
 
@@ -31,8 +31,6 @@ main{
     background-color: #CB1E36;
     display: flex;
     justify-content: space-evenly;
-    /* flex-direction: column; */
-    /* align-items: center; */
 }
 
 .divCamp{

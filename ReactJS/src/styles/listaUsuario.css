@@ -163,10 +163,10 @@ main{
     .accordion{
         position: relative;
     }
-
+/* 
     .accordion .label{
         
-    }
+    } */
 
     #button{
         display: none;
