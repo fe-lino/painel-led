@@ -21,7 +21,7 @@ export default class Campanha extends Component {
 
 
     buscarCampanhasAtivas = () => {
-        fetch('http://localhost:5000/api/Campanhas/AtivoList')
+        fetch('https://tccbackend.azurewebsites.net/api/Campanhas/AtivoList')
 
             .then(resposta => resposta.json())
 
@@ -42,7 +42,7 @@ export default class Campanha extends Component {
                         console.log(campanha.arquivo)
                             return (
                                 
-                                    <img classname="imgCurso"src={"http://localhost:5000/StaticFiles/"+ campanha.arquivo}/>
+                                    <img classname="imgCurso"src={"https://tccbackend.azurewebsites.net/StaticFiles/"+ campanha.arquivo}/>
                                
                             )
                         })}

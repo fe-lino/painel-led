@@ -125,8 +125,14 @@ main{
         padding: 0px;
     }
 
-    h1, h2 {
+    h1{
         display: none;
+    }
+
+    h2{
+        color: white;
+        font-family: 'Montserrat', sans-serif; 
+        font-size: 3.5rem;
     }
 
     header img{
@@ -160,13 +166,23 @@ main{
         width: 360px;
     }
 
-    .accordion{
-        position: relative;
+    .infoResponsivo{
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
-/* 
-    .accordion .label{
-        
-    } */
+    
+    
+    .Accordion{
+        border: none;
+        border-radius: 25px;
+    }
+
+    .botaoResp{
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
 
     #button{
         display: none;

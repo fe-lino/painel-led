@@ -7,7 +7,11 @@ import Exc from '../../src/assets/img/excluir.svg'
 import Add from '../../src/assets/img/Add.svg'
 import '../../src/styles/listaUsuario.css'
 import { Link } from "react-router-dom";
-
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export default class Listar extends Component {
 
@@ -22,7 +26,7 @@ export default class Listar extends Component {
     }
 
     buscarUsuarios = () => {
-        fetch('http://localhost:5000/api/Usuarios/Listar')
+        fetch('https://tccbackend.azurewebsites.net/api/Usuarios/Listar')
 
             .then(resposta => resposta.json())
 
@@ -31,7 +35,7 @@ export default class Listar extends Component {
 
     excluirUsuarios = (usuario) => {
         console.log('O usuario' + usuario.idUsuario + 'foi excluido')
-        fetch('http://localhost:5000/api/Usuarios/' + usuario.idUsuario,
+        fetch('https://tccbackend.azurewebsites.net/index.html/api/Usuarios/' + usuario.idUsuario,
             {
                 method: 'DELETE'
             })
@@ -43,8 +47,10 @@ export default class Listar extends Component {
     };
 
 
+
     componentDidMount() {
         this.buscarUsuarios()
+
     }
 
 
@@ -66,20 +72,44 @@ export default class Listar extends Component {
                     <div className='titulo'>
                         <h2>Usuários</h2>
                     </div>
+                    
                     <div className="listaResponsiva">
-                        <div className="accordion">
-                            <div className="label">João</div>
-                            <div className="content">
-
-                            <p> Lorem ipsum dolor sit amet 
-                                consectetur adipisicing elit.
-                                 Deserunt dicta rerum optio laboriosam 
-                                 officia pariatur sapiente animi. 
-                                 Consequatur explicabo pariatur culpa,
-                                  harum ducimus consequuntur et. 
-                                  Recusandae tempore enim maxime! A.</p>
-                            </div>
-                        </div>
+                    {this.state.listaUsuario.map((usuario) => {
+                                return (
+                                    <Accordion className="Accordion" >
+                            
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                    >
+                                        <Typography>
+                                            {usuario.nomeUsuario}
+                                            </Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Typography className="infoResponsivo">
+                                            <ul>
+                                                <h3>Id</h3>
+                                                {usuario.idUsuario}
+                                                <h3>Email</h3>
+                                                {usuario.email}
+                                                <h3>Tipo Usuário</h3>
+                                                {usuario.idTipoUsuario}
+                                            </ul>
+                                            <h3>Ações</h3>
+                                            <button className="botaoResp" type='button'
+                                                onClick={() => this.excluirUsuarios(usuario)}
+                                            >
+                                                <img src={Exc}></img>
+                                            </button>
+                                        </Typography>
+                                    </AccordionDetails>
+                                    {/* Primeiro nome */}
+                                </Accordion>
+                                )
+                            })}
+                        
                     </div>
                     <table className='tabela'>
                         <thead className='labels'>
